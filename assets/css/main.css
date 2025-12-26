@@ -3950,3 +3950,52 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+/* ===== Forty Banner: Text Left, Image Right ===== */
+
+/* Layout */
+#banner .content.banner-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  text-align: left; /* override center */
+}
+
+/* Force left alignment (beats Forty defaults) */
+#banner .content.banner-split .banner-text {
+  flex: 1;
+  text-align: left !important;
+}
+
+/* Image block */
+#banner .content.banner-split .banner-photo {
+  flex-shrink: 0;
+}
+
+/* Profile image sizing */
+#banner .content.banner-split .image.profile {
+  width: 220px;
+}
+
+#banner .content.banner-split .image.profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Mobile behavior */
+@media screen and (max-width: 736px) {
+  #banner .content.banner-split {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  #banner .content.banner-split .banner-text {
+    text-align: center !important;
+  }
+
+  #banner .content.banner-split .image.profile {
+    width: 160px;
+  }
+}
